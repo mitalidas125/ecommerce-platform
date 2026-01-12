@@ -85,20 +85,25 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <h1>E-Shop</h1>
-            <div>
-                <a href="{% url 'products:product_list' %}">Home</a>
-                <a href="{% url 'cart:cart_detail' %}">Cart</a>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'orders:order_list' %}">My Orders</a>
-                    <a href="{% url 'admin:index' %}">Admin</a>
-                {% else %}
-                    <a href="#">Login</a>
+    <div class="container">
+        <h1><a href="{% url 'products:product_list' %}" style="color: white; text-decoration: none;">🛍️ E-Shop</a></h1>
+        <div>
+            <a href="{% url 'products:product_list' %}">Home</a>
+            <a href="{% url 'cart:cart_detail' %}">
+                🛒 Cart 
+                {% if cart|length > 0 %}
+                    <span style="background: #e74c3c; padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.8rem;">{{ cart|length }}</span>
                 {% endif %}
-            </div>
+            </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'orders:order_list' %}">My Orders</a>
+                <a href="{% url 'admin:index' %}">Admin</a>
+            {% else %}
+                <a href="#">Login</a>
+            {% endif %}
         </div>
-    </nav>
+    </div>
+</nav>
     
     <div class="container">
         {% if messages %}

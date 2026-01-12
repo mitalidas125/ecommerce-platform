@@ -286,7 +286,7 @@
                 <span>₹{{ cart.get_total_price }}</span>
             </div>
             
-            <button class="btn-checkout">Proceed to Checkout</button>
+            <a href="{% url 'orders:order_create' %}" class="btn-checkout" style="text-decoration: none; display: block; text-align: center;">Proceed to Checkout</a>
             <a href="{% url 'products:product_list' %}" class="btn-continue">Continue Shopping</a>
         </div>
     </div>
