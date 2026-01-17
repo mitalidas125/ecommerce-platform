@@ -18,10 +18,10 @@ This is a fully functional e-commerce platform that allows users to browse produ
 ![Product Detail](screenshots/products.png)
 
 ### Shopping Cart
-![Cart](screenshots/cart.png)
+![Cart](screenshots/cart%20.png)
 
-### orderpage
-![order](screenshot/orderpage.png)
+###  checklist
+![Order](screenshots/checklist.png)
 
 ### User Profile
 ![Profile](screenshots/profile.png)
