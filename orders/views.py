@@ -13,21 +13,16 @@ def order_create(request):
         messages.warning(request, 'Your cart is empty!')
         return redirect('products:product_list')
     
+    # Check if user is logged in
+    if not request.user.is_authenticated:
+        messages.warning(request, 'Please login to place an order.')
+        return redirect('users:login')  # Login page pe redirect
+    
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
-            # If user is logged in, assign user to order
-            if request.user.is_authenticated:
-                order.user = request.user
-            else:
-                # For anonymous users, create a temporary user or handle differently
-                from django.contrib.auth.models import User
-                # You can create anonymous user or require login
-                # For now, we'll require them to be logged in
-                messages.warning(request, 'Please login to place an order.')
-                return redirect('products:product_list')
-            
+            order.user = request.user
             order.save()
             
             # Create order items

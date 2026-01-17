@@ -87,6 +87,18 @@
     <nav class="navbar">
     <div class="container">
         <h1><a href="{% url 'products:product_list' %}" style="color: white; text-decoration: none;">🛍️ E-Shop</a></h1>
+        
+        <!-- Search Bar -->
+        <form method="GET" action="{% url 'products:product_list' %}" style="flex: 1; max-width: 500px; margin: 0 2rem;">
+            <input 
+                type="text" 
+                name="search" 
+                placeholder="Search products..." 
+                value="{{ search_query }}"
+                style="width: 100%; padding: 0.7rem 1rem; border-radius: 25px; border: none; font-size: 0.9rem;"
+            >
+        </form>
+        
         <div>
             <a href="{% url 'products:product_list' %}">Home</a>
             <a href="{% url 'cart:cart_detail' %}">

@@ -28,7 +28,7 @@ def signup_view(request):
 # ------------------------
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('products:product_list')
+        return redirect('products:product_list')  # Already logged in
     
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST)
@@ -39,10 +39,8 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f'Welcome back, {username}!')
-                next_url = request.GET.get('next', 'products:product_list')
-                return redirect(next_url)
-            else:
-                messages.error(request, 'Invalid username or password.')
+                # Redirect to homepage, not admin
+                return redirect('products:product_list')
     else:
         form = LoginForm()
     

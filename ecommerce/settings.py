@@ -143,8 +143,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SESSION_COOKIE_AGE = 86400  # 24 hours
 
 # Login/Logout URLs
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'products:product_list'
+LOGOUT_REDIRECT_URL = 'products:product_list'
 # Cart session ID
 CART_SESSION_ID = 'cart'
