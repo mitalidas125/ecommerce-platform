@@ -235,9 +235,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **[Mitali Das]**
 
-- GitHub: [@your-username](https://github.com/mitalidas125/ecommerce-platform)
-- LinkedIn: [Your Profile](https://linkedin.com/in/mitali-das-086718321
-)
+- GitHub: [https://github.com/mitalidas125/ecommerce-platform]
+- LinkedIn: [https://linkedin.com/in/mitali-das-086718321]
+
 - Email: dasmitali7089@gmail.com
 
 ## 🙏 Acknowledgments
